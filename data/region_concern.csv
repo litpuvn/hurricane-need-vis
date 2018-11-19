@@ -1,3 +1,4 @@
-region, concerns
-region1, "water donation help flood"
-region2, "power flood"
+region, concern, context, count
+region1, water, lack, 20
+region1, help, donation, 50
+region2, watter, flood, 60
