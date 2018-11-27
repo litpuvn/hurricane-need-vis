@@ -20,7 +20,6 @@ body {
 .right {
   right: 0;
   width: 30%;
-  background-color: red;
 }
 
 .centered {
@@ -29,6 +28,14 @@ body {
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+
+svg {
+  overflow: scroll;
+}
+
+svg g {
+  opacity: 0.9;
 }
 
 .centered img {
