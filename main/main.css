@@ -42,3 +42,21 @@ svg g {
   width: 150px;
   border-radius: 50%;
 }
+
+.testHover1 {
+  position: absolute;
+  left: 25%;
+  background-color: teal;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%
+}
+
+.testHover2 {
+  position: absolute;
+  left: 50%;
+  background-color: coral;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%
+}

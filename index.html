@@ -1,57 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
+
   <head>
     <title>Hurricane Needs</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="main/main.css" type="text/css" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
-    />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="main/main.css" type="text/css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="lib/jquery.min.js"></script>
     <script src="lib/bootstrap.min.js"></script>
+
+    <!--css for leaflet-->
+    <link rel="stylesheet" href="main/leaflet.css" />
+    <!--js for leaflet-->
+    <script src="lib/leaflet.js"></script>
+    <script src="lib/houston.js"></script>
+    <script src="lib/main.js"></script>
+
+    <link rel="stylesheet" type="text/css" href="main/map.css">
   </head>
 
   <body>
-    <nav
-      class="navbar navbar-inverse"
-      style="bottom: 0; margin: 0; border-radius: 0"
-    >
+
+    <nav class="navbar navbar-inverse" style="bottom: 0; margin: 0; border-radius: 0">
       <div class="container-fluid">
         <div class="navbar-header">
           <a class="navbar-brand" href="#">Hurricane Needs</a>
         </div>
         <ul class="nav navbar-nav">
           <li class="active"><a href="#">Home</a></li>
-          <!--
-            <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="#">Page 1-1</a></li>
-                <li><a href="#">Page 1-2</a></li>
-                <li><a href="#">Page 1-3</a></li>
-              </ul>
-            </li>
-            <li><a href="#">Page 2</a></li>
+          <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Page 1-1</a></li>
+              <li><a href="#">Page 1-2</a></li>
+              <li><a href="#">Page 1-3</a></li>
+            </ul>
           -->
-        </ul>
-        <!--
-          <ul class="nav navbar-nav navbar-right">
-            <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-            <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-          </ul>
-        -->
       </div>
     </nav>
 
     <!-- Left Section for Siyuan -->
-    <div class="split left"><div class="centered"></div></div>
+    <div class="split left">
+      <div id = "map">
+        <button class="button" id="change-water">Water</button>
+        <button class="button" id="change-help" >Help </button>
+        <button class="button" id="change-food" >Food </button>
+      </div>
+    </div>
 
     <!-- Right Section for Chetan -->
     <div class="split right">
       <div class="centered">
         <svg width="200" height="550">
-          <g transform="translate(0, 25)">
+          <g transform="translate(0, 25)" id="water">
             <circle
               x="1066"
               y="61"
@@ -77,7 +78,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Help</text>
             <text x="100" y="9" dy=".35em" fill="black">Donation</text>
           </g>
-          <g transform="translate(0, 75)">
+          <g transform="translate(0, 75)" id="food">
             <circle
               x="1066"
               y="61"
@@ -90,7 +91,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Food</text>
             <text x="100" y="9" dy=".35em" fill="black">Shortage</text>
           </g>
-          <g transform="translate(0, 100)">
+          <g transform="translate(0, 100)" id="gas">
             <circle
               x="1066"
               y="61"
@@ -103,7 +104,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Gas</text>
             <text x="100" y="9" dy=".35em" fill="black">Requirement</text>
           </g>
-          <g transform="translate(0, 125)">
+          <g transform="translate(0, 125)" id="pet">
             <circle
               x="1066"
               y="61"
@@ -116,7 +117,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Pet</text>
             <text x="100" y="9" dy=".35em" fill="black">Care</text>
           </g>
-          <g transform="translate(0, 150)">
+          <g transform="translate(0, 150)" id="power">
             <circle
               x="1066"
               y="61"
@@ -129,7 +130,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Power</text>
             <text x="100" y="9" dy=".35em" fill="black">Fluctuation</text>
           </g>
-          <g transform="translate(0, 175)">
+          <g transform="translate(0, 175)" id="clothes">
             <circle
               x="1066"
               y="61"
@@ -142,7 +143,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Clothes</text>
             <text x="100" y="9" dy=".35em" fill="black">Need</text>
           </g>
-          <g transform="translate(0, 200)">
+          <g transform="translate(0, 200)" id="diaper">
             <circle
               x="1066"
               y="61"
@@ -155,7 +156,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Diaper</text>
             <text x="100" y="9" dy=".35em" fill="black">Sanitization</text>
           </g>
-          <g transform="translate(0, 225)">
+          <g transform="translate(0, 225)" id="house">
             <circle
               x="1066"
               y="61"
@@ -168,7 +169,7 @@
             <text x="24" y="9" dy=".35em" fill="black">House</text>
             <text x="100" y="9" dy=".35em" fill="black">Living</text>
           </g>
-          <g transform="translate(0, 250)">
+          <g transform="translate(0, 250)" id="boat">
             <circle
               x="1066"
               y="61"
@@ -181,7 +182,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Boat</text>
             <text x="100" y="9" dy=".35em" fill="black">Travel</text>
           </g>
-          <g transform="translate(0, 275)">
+          <g transform="translate(0, 275)" id="call">
             <circle
               x="1066"
               y="61"
@@ -194,7 +195,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Call</text>
             <text x="100" y="9" dy=".35em" fill="black">Communication</text>
           </g>
-          <g transform="translate(0, 300)">
+          <g transform="translate(0, 300)" id="hospital">
             <circle
               x="1066"
               y="61"
@@ -207,7 +208,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Hospital</text>
             <text x="100" y="9" dy=".35em" fill="black">Health</text>
           </g>
-          <g transform="translate(0, 325)">
+          <g transform="translate(0, 325)" id="volunteer">
             <circle
               x="1066"
               y="61"
@@ -220,7 +221,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Volunteer</text>
             <text x="100" y="9" dy=".35em" fill="black">Help</text>
           </g>
-          <g transform="translate(0, 350)">
+          <g transform="translate(0, 350)" id="money">
             <circle
               x="1066"
               y="61"
@@ -233,7 +234,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Money</text>
             <text x="100" y="9" dy=".35em" fill="black">Need</text>
           </g>
-          <g transform="translate(0, 375)">
+          <g transform="translate(0, 375)" id="rescue">
             <circle
               x="1066"
               y="61"
@@ -246,7 +247,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Rescue</text>
             <text x="100" y="9" dy=".35em" fill="black">help</text>
           </g>
-          <g transform="translate(0, 400)">
+          <g transform="translate(0, 400)" id="fund">
             <circle
               x="1066"
               y="61"
@@ -259,7 +260,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Fund</text>
             <text x="100" y="9" dy=".35em" fill="black">Relief</text>
           </g>
-          <g transform="translate(0, 425)">
+          <g transform="translate(0, 425)" id="charity">
             <circle
               x="1066"
               y="61"
@@ -272,7 +273,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Charity</text>
             <text x="100" y="9" dy=".35em" fill="black">Donation</text>
           </g>
-          <g transform="translate(0, 450)">
+          <g transform="translate(0, 450)" id="rescue">
             <circle
               x="1066"
               y="61"
@@ -285,7 +286,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Rescue</text>
             <text x="100" y="9" dy=".35em" fill="black">Help</text>
           </g>
-          <g transform="translate(0, 475)">
+          <g transform="translate(0, 475)" id="ol">
             <circle
               x="1066"
               y="61"
@@ -298,7 +299,7 @@
             <text x="24" y="9" dy=".35em" fill="black">Oil</text>
             <text x="100" y="9" dy=".35em" fill="black">Need</text>
           </g>
-          <g transform="translate(0, 500)">
+          <g transform="translate(0, 500)" id="shop">
             <circle
               x="1066"
               y="61"
@@ -313,6 +314,14 @@
           </g>
         </svg>
       </div>
+      <div class="testHover1" onmouseover="fadeOnHover1(['water', 'food', 'clothes'])" onmouseout="focusOutHover1(['water', 'food', 'clothes'])">
+        Test 1
+      </div>
+      <div class="testHover2" onmouseover="fadeOnHover2(['fund', 'rescue', 'shop'])" onmouseout="focusOutHover2(['fund', 'rescue', 'shop'])">
+        Test 2
+      </div>
     </div>
+  
+    <script src="lib/map.js"></script>
   </body>
 </html>
