@@ -65,7 +65,7 @@
           <text x="24" y="9" dy=".35em" fill="black">Water</text>
           <text x="100" y="9" dy=".35em" fill="black">Flooded</text>
         </g>
-        <g transform="translate(0, 50)">
+        <g transform="translate(0, 50)" id="help">
           <circle
             x="1066"
             y="61"
@@ -234,7 +234,7 @@
           <text x="24" y="9" dy=".35em" fill="black">Money</text>
           <text x="100" y="9" dy=".35em" fill="black">Need</text>
         </g>
-        <g transform="translate(0, 375)" id="rescue">
+        <g transform="translate(0, 375)" id="medicine">
           <circle
             x="1066"
             y="61"
@@ -244,8 +244,8 @@
             stroke-width="3"
             fill="#e67300"
           />
-          <text x="24" y="9" dy=".35em" fill="black">Rescue</text>
-          <text x="100" y="9" dy=".35em" fill="black">help</text>
+          <text x="24" y="9" dy=".35em" fill="black">Medicine</text>
+          <text x="100" y="9" dy=".35em" fill="black">Cure</text>
         </g>
         <g transform="translate(0, 400)" id="fund">
           <circle
@@ -286,7 +286,7 @@
           <text x="24" y="9" dy=".35em" fill="black">Rescue</text>
           <text x="100" y="9" dy=".35em" fill="black">Help</text>
         </g>
-        <g transform="translate(0, 475)" id="ol">
+        <g transform="translate(0, 475)" id="oil">
           <circle
             x="1066"
             y="61"
@@ -313,9 +313,10 @@
           <text x="100" y="9" dy=".35em" fill="black">Essentials</text>
         </g>
       </svg>
-  </div> 
-  <script src="lib/map.js"></script>
-
-</body>
-
+      <div onmouseover="fadeNeeds(['water', 'gas', 'oil'])" onmouseout="focusNeeds()">
+        click here 
+      </div>
+    </div>
+    <script src="lib/map.js"></script>
+  </body>
 </html>
