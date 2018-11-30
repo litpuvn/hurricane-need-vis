@@ -1,0 +1,4 @@
+datetime, region, need, frequency
+2018-08-20 08:30:00, 01, water, 100
+2018-08-20 08:30:00, 01, diaper, 80
+2018-08-20 08:30:00, 02, diaper, 60
