@@ -1,4 +1,89 @@
 region, concern, context, count
-region1, water, lack, 20
-region1, help, donation, 50
-region2, watter, flood, 60
+1, water, lack,48
+2, help, donation,48
+3, watter, flood,26
+4,water, flooded,44
+5,help, Donation,52
+6,food,Shortage,62
+7,gas, Requirement,22
+8,pet, Care,33
+9,power, Fluctuation,12
+10,clothes, Need,8
+11,diaper, Sanitization,24
+12,house, Living,13
+13,boat, Travel,4
+14,call, Communication,13
+15,hospital, Health,35
+16,volunteer, Help,75
+17,money, Need,39
+18,rescue, help,78
+19,fund, Relief,19
+20,charity, Donation,25
+21,rescue, Help,68
+22,oil, Need,85
+23,shop, Essentials,29
+24,water, flooded,55
+25,help, Donation,63
+26,food,Shortage,26
+27,gas, Requirement,7
+28,pet, Care,4
+29,power, Fluctuation,97
+30,clothes, Need,52
+31,diaper, Sanitization,64
+32,house, Living,40
+33,boat, Travel,58
+34,call, Communication,81
+35,hospital, Health,20
+36,volunteer, Help,74
+37,money, Need,31
+38,rescue, help,91
+39,fund, Relief,88
+40,charity, Donation,95
+41,rescue, Help,100
+42,oil, Need,61
+43,shop, Essentials,6
+44,water, flooded,77
+45,help, Donation,47
+46,food,Shortage,36
+47,gas, Requirement,18
+48,pet, Care,16
+49,power, Fluctuation,12
+50,clothes, Need,99
+51,diaper, Sanitization,5
+52,house, Living,37
+53,boat, Travel,53
+54,call, Communication,79
+55,hospital, Health,29
+56,volunteer, Help,59
+57,money, Need,95
+58,rescue, help,5
+59,fund, Relief,57
+60,charity, Donation,85
+61,rescue, Help,85
+62,oil, Need,20
+63,shop, Essentials,66
+64,water, flooded,86
+65,help, Donation,93
+66,food,Shortage,51
+67,gas, Requirement,67
+68,pet, Care,4
+69,power, Fluctuation,28
+70,clothes, Need,65
+71,diaper, Sanitization,51
+72,house, Living,85
+73,boat, Travel,46
+74,call, Communication,11
+75,hospital, Health,79
+76,volunteer, Help,67
+77,money, Need,26
+78,rescue, help,3
+79,fund, Relief,86
+80,charity, Donation,97
+81,rescue, Help,95
+82,oil, Need,85
+83,shop, Essentials,100
+84,clothes, Need,59
+85,diaper, Sanitization,14
+86,house, Living,99
+87,boat, Travel,51
+88,call, Communication,23
