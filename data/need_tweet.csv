@@ -1,3 +1,4 @@
-id, tweet
-000001, "i need something..."
-000003, "i need something..."
+region, tweet_id, tweet
+1, 000001, "i need something..."
+1, 000003, "i need something..."
+2, 000005, "i need something..."
