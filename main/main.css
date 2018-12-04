@@ -17,20 +17,39 @@ body {
 
 .left {
   left: 0;
-  width: 70%;
+  width: 50%;
+  float: left;
+}
+
+.middle{
+  left: 45%;
+  width: 10%;
 }
 
 .right {
   right: 0;
-  width: 30%;
+  width: 40%;
 }
 
+/*
 .centered {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   text-align: center;
+}
+*/
+.up{
+  height: 45%;
+  background-color: black;
+}
+
+.down{
+  top: 55%;
+  height: 45%;
+  min-height: 300px;
+  min-width: 500px;
 }
 
 svg {
@@ -46,4 +65,9 @@ svg g {
 .centered img {
   width: 150px;
   border-radius: 50%;
+}
+
+#chart{
+  min-width:500px;
+  min-height: 400px; 
 }
