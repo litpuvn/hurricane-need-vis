@@ -12,6 +12,7 @@ body {
   position: fixed;
   z-index: 1;
   overflow-x: hidden;
+  /* overflow-y: hidden; */
   padding-top: 20px;
 }
 
@@ -21,31 +22,22 @@ body {
   float: left;
 }
 
-.middle{
+.middle {
   left: 45%;
   width: 10%;
 }
 
 .right {
-  right: 0;
+  right: 2%;
   width: 40%;
 }
 
-/*
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-*/
-.up{
+.up {
   height: 45%;
-  background-color: black;
+  right: 2%;
 }
 
-.down{
+.down {
   top: 55%;
   height: 45%;
   min-height: 300px;
@@ -67,7 +59,19 @@ svg g {
   border-radius: 50%;
 }
 
-#chart{
-  min-width:500px;
-  min-height: 400px; 
+#chart {
+  min-width: 500px;
+  min-height: 400px;
+}
+
+#chrt {
+  float: left;
+  /* right: 3%; */
+  max-width: 40%;
+}
+
+@media only screen and (max-width: 479px) {
+  #container2 {
+    width: 90%;
+  }
 }
