@@ -5,8 +5,8 @@
   <title>Hurricane Needs</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="main/main.css" type="text/css">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="main/main.css" type="text/css"/>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
   <script src="lib/jquery.min.js"></script>
   <script src="lib/bootstrap.min.js"></script>
 
@@ -16,7 +16,7 @@
   <script src="lib/leaflet.js"></script>
   <script src="lib/houston.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="main/map.css">
+  <link rel="stylesheet" type="text/css" href="main/map.css"/>
 
   <!--js for wordcloud-->
   <!-- <script src="lib/d3.js"></script> -->
@@ -30,33 +30,33 @@
   <link rel="stylesheet" href="main/c3.css" />
   <link rel="stylesheet" href="main/c3.min.css" />
   <script src="lib/main.js" defer></script>
+  <script src="lib/wordcloud.js"></script>
+
+  <script src="lib/stake_holder_viewer.js"></script>
+  <script src="lib/menu_item_handler.js"></script>
+
+  <!-- https://tmroyal.github.io/Chart.Streamgraph -->
+  <script src="lib/Chart.Streamgraph.S.js"></script>
+  <script src="lib/d3-horizon-chart.js"></script>
+
+  <!-- Include Vex - Popup manager -->
+  <script type="text/javascript" src="lib/vex.js"></script>
+  <script type="text/javascript" src="lib/vex.combined.js"></script>
+  <link rel="stylesheet" type="text/css" href="resources/css/vex/vex.css" />
+  <link rel="stylesheet" type="text/css" href="resources/css/vex/vex-theme-os.css" />
+
 </head>
 
 <body>
-
-  <nav class="navbar navbar-inverse" style="bottom: 0; margin: 0; border-radius: 0">
-    <div class="container-fluid">
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <!-- <li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Page 1 <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Page 1-1</a></li>
-            <li><a href="#">Page 1-2</a></li>
-            <li><a href="#">Page 1-3</a></li>
-          </ul>
-        </li>
-        <li><a href="#">Page 2</a></li> -->
-      </ul>
-      <!-- <ul class="nav navbar-nav navbar-right">
-        <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-        <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-      </ul> -->
-    </div>
-  </nav>
-
   <!-- Left Section for Siyuan -->
+
+    <div class="panel-left-header">
+      <!--<div style="float: left; height: 30px; "><input type="text" placeholder="Search state or county..." class="search-box" /></div>-->
+      <div class="menu-button">Home</div>
+      <div class="menu-button" onclick="menuItemHandler.onAdminBoardClick()">Concern_Flow</div>
+    </div>
   <div class="split left">
-    <div id="map"></div>
+    <div id = "map"></div> 
   </div>
   <!-- Right Section for Chetan -->
   <div class="split middle">
@@ -171,9 +171,17 @@
     </div>
     <div class="split right down" id="right_down">
       <div id="chart"></div>
-    </div>
+      <div id="chartAll"></div>
+    </div>  
     <script src="lib/wordcloud.js"></script>
   </div>
+  <script type="text/javascript" src="lib/initial.js"></script>
+  <script type="text/javascript">
+  window.onload=function(){
+    clean(); // clean the previous wordCloud
+    drawWordCloud(userAll_content, 'chartAll'); 
+  }
+  </script>
 </body>
 
 </html>
