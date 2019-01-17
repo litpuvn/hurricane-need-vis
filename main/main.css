@@ -21,13 +21,13 @@ body {
   float: left;
 }
 
-.middle{
+.middle {
   left: 45%;
   width: 10%;
 }
 
 .right {
-  right: 0;
+  right: 2%;
   width: 40%;
 }
 
@@ -43,10 +43,10 @@ body {
 
 .up{
   height: 45%;
-  background-color: black;
+  right: 2%;
 }
 
-.down{
+.down {
   top: 55%;
   height: 45%;
   min-height: 300px;
@@ -66,6 +66,10 @@ svg g {
 .centered img {
   width: 150px;
   border-radius: 50%;
+}
+
+#chrt {
+  float: left;
 }
 
 #chart{
