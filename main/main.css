@@ -68,6 +68,10 @@ svg g {
   border-radius: 50%;
 }
 
+#chrt {
+  float: left;
+}
+
 #chart{
   min-width:500px;
   min-height: 400px; 
