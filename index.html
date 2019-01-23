@@ -5,8 +5,8 @@
   <title>Hurricane Needs</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="main/main.css" type="text/css"/>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="main/main.css" type="text/css" />
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="lib/jquery.min.js"></script>
   <script src="lib/bootstrap.min.js"></script>
 
@@ -16,26 +16,19 @@
   <script src="lib/leaflet.js"></script>
   <script src="lib/houston.js"></script>
 
-  <link rel="stylesheet" type="text/css" href="main/map.css"/>
+  <link rel="stylesheet" type="text/css" href="main/map.css" />
 
   <!--js for wordcloud-->
-  <!-- <script src="lib/d3.js"></script> -->
-  <!-- <script src="lib/c3.js"></script> -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.css"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.css">
+  </link>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.min.css"></script>
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.min.css">
+  </link>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.min.js"></script>
-  <!-- <script src="lib/d3.min.js"></script> -->
-  
+
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script> -->
-  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
-  <!-- <script src="lib/c3.min.js"></script> -->
   <script src="lib/cloud.js"></script>
-  <!-- <link rel="stylesheet" href="main/c3.css" /> -->
-  <!-- <link rel="stylesheet" href="main/c3.min.css" /> -->
   <script src="lib/main.js" defer></script>
   <script src="lib/wordcloud.js"></script>
 
@@ -57,13 +50,13 @@
 <body>
   <!-- Left Section for Siyuan -->
 
-    <div class="panel-left-header">
-      <!--<div style="float: left; height: 30px; "><input type="text" placeholder="Search state or county..." class="search-box" /></div>-->
-      <div class="menu-button">Home</div>
-      <div class="menu-button" onclick="menuItemHandler.onAdminBoardClick()">Concern_Flow</div>
-    </div>
+  <div class="panel-left-header">
+    <!--<div style="float: left; height: 30px; "><input type="text" placeholder="Search state or county..." class="search-box" /></div>-->
+    <div class="menu-button">Home</div>
+    <div class="menu-button" onclick="menuItemHandler.onAdminBoardClick()">Concern_Flow</div>
+  </div>
   <div class="split left">
-    <div id = "map"></div> 
+    <div id="map"></div>
   </div>
   <!-- Right Section for Chetan -->
   <div class="split middle">
@@ -179,15 +172,16 @@
     <div class="split right down" id="right_down">
       <div id="chart"></div>
       <div id="chartAll"></div>
-    </div>  
+    </div>
     <script src="lib/wordcloud.js"></script>
   </div>
   <script type="text/javascript" src="lib/initial.js"></script>
   <script type="text/javascript">
-  window.onload=function(){
-    clean(); // clean the previous wordCloud
-    drawWordCloud(userAll_content, 'chartAll'); 
-  }
+    window.onload = function () {
+      clean(); // clean the previous wordCloud
+      drawWordCloud(userAll_content, 'chartAll');
+    }
+
   </script>
 </body>
 
