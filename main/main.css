@@ -22,38 +22,29 @@ body {
 }
 
 .middle {
-  left: 45%;
-  width: 10%;
+  left: 42.5%;
+  width: 12.5%;
 }
 
 .right {
   right: 2%;
-  width: 40%;
+  width: 42.5%;
 }
-
-/*
-.centered {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-align: center;
-}
-*/
 
 .up{
-  height: 45%;
-  right: 2%;
+  height: 42.5%;
+  right: 10%;
 }
 
 .down {
-  top: 55%;
-  height: 45%;
-  min-height: 300px;
-  min-width: 500px;
+  top: 50.5%;
+  height: 47.5%;
+  left: 10.5%;
+/*  min-height: 300px;
+  min-width: 500px;*/
 }
 
-svg {
+svg{
   overflow: scroll;
   position: absolute;
   left: 10%;
@@ -83,44 +74,39 @@ svg g {
   z-index: 1;
 }
 
-.menu-button {
+.menu {
     height: 30px;
     margin-left: 20px;
     display:inline-block;
     color:#FFFFFF;
-    background:#2e505d;
-    box-shadow: 0 0 5px -1px rgba(0,0,0,0.2);
-    cursor:pointer;
+    background:#183442;
     vertical-align:middle;
-    max-width: 230px;
-    min-width: 150px;
-    padding-top: 5px;
     text-align: center;
     padding-left: 8px;
     padding-right: 8px;
-    font-weight: bold;
+    font-size: 25px;
 }
 
 .panel-left-header { /*menu*/
     background-color: #183442;
     padding-right: 15px;
     padding-left: 15px;
-    padding-top: 10px;
-    padding-bottom: 10px;
+    padding-top: 15px;
+    padding-bottom: 15px;
     margin-right: auto;
     margin-left: auto;
 }
 
-.menu-button:hover {
+/*.menu-button:hover {
     color:#0788f7;
     box-shadow: 0 0 5px -1px rgba(0,0,0,0.6);
-}
+}*/
 
-.concern_flow_overlay{
+/*.concern_flow_overlay{
     background: transparent !important;
-}
+}*/
 
-.concern_flow{ 
+/*.concern_flow{ 
     width: 1000px;
     height: 600px;
     background-color: #FFFFFF;
@@ -131,3 +117,11 @@ svg g {
     margin: auto;
     border: solid 2px black;
 }
+*/
+#ids{
+    font-family: Impact;
+    font-size: 30px;
+}
+/*.region_name{
+ 
+}*/
