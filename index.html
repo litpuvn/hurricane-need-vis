@@ -19,23 +19,15 @@
   <link rel="stylesheet" type="text/css" href="main/map.css"/>
 
   <!--js for wordcloud-->
-  <!-- <script src="lib/d3.js"></script> -->
-  <!-- <script src="lib/c3.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.css"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.min.css"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.min.js"></script>
-  <!-- <script src="lib/d3.min.js"></script> -->
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.7.0/d3.min.js"></script> -->
-  <!-- <script src="https://d3js.org/d3.v5.min.js"></script> -->
-  <!-- <script src="lib/c3.min.js"></script> -->
+  
   <script src="lib/cloud.js"></script>
-  <!-- <link rel="stylesheet" href="main/c3.css" /> -->
-  <!-- <link rel="stylesheet" href="main/c3.min.css" /> -->
   <script src="lib/main.js" defer></script>
   <script src="lib/wordcloud.js"></script>
 
@@ -44,7 +36,7 @@
 
   <!-- https://tmroyal.github.io/Chart.Streamgraph -->
   <script src="lib/Chart.Streamgraph.S.js"></script>
-  <script src="lib/d3-horizon-chart.js"></script>
+  <link rel="stylesheet" type="text/css" href="main/tweet.css">
 
   <!-- Include Vex - Popup manager -->
   <script type="text/javascript" src="lib/vex.js"></script>
@@ -56,15 +48,13 @@
 
 <body>
   <!-- Left Section for Siyuan -->
-
     <div class="panel-left-header">
-      <!--<div style="float: left; height: 30px; "><input type="text" placeholder="Search state or county..." class="search-box" /></div>-->
-      <div class="menu-button">Home</div>
-      <div class="menu-button" onclick="menuItemHandler.onAdminBoardClick()">Concern_Flow</div>
+      <div class="menu">The Rescue System</div>
     </div>
   <div class="split left">
     <div id = "map"></div> 
   </div>
+
   <!-- Right Section for Chetan -->
   <div class="split middle">
     <svg width="200" height="550">
@@ -176,19 +166,126 @@
     <div class="up">
       <div id="chrt"></div>
     </div>
-    <div class="split right down" id="right_down">
-      <div id="chart"></div>
-      <div id="chartAll"></div>
+    <div class="down" id="right_down">
+      <section>
+        <div id="region_name"></div>
+      </section>
+      <section>
+        <div id="chart" style="position:fixed; top:50%; left:60.5%"></div>
+      </section>
     </div>  
     <script src="lib/wordcloud.js"></script>
   </div>
-  <script type="text/javascript" src="lib/initial.js"></script>
-  <script type="text/javascript">
-  window.onload=function(){
-    clean(); // clean the previous wordCloud
-    drawWordCloud(userAll_content, 'chartAll'); 
-  }
+<!--（Modal） -->
+<!--<a> for trigger modal-->
+<a class="btn" data-toggle="modal" data-target="#myModal" onclick="showCanvas()" style="width: 0px; height: 0px"></a>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel" style="font-family: Impact"></h4>
+      </div>
+    <div class="modal-body">
+        <div class="graph" style="overflow:hidden;">
+        </div>
+        <hr>
+
+    <div class="tweet">
+      <ul class="timeline">
+        <li>
+          <div class="avatar">
+            <img src="http://www.croop.cl/UI/twitter/images/doug.jpg">
+            <div class="hover">
+              <div class="icon-twitter"></div>
+            </div>
+          </div>
+          <div class="bubble-container">
+            <div class="bubble">
+              <h3>@russel</h3> retweeted <h3>@doug</h3><br/>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae.
+              <div class="over-bubble">
+                <div class="icon-mail-reply action"></div>
+                <div class="icon-retweet action"></div>
+                <div class="icon-star"></div>
+              </div>
+            </div> 
+            <div class="arrow"></div>
+          </div>
+        </li>
+        <li>
+          <div class="avatar">
+            <img src="http://www.croop.cl/UI/twitter/images/carl.jpg">
+            <div class="hover">
+              <div class="icon-twitter"></div>
+            </div>
+          </div>
+          <div class="bubble-container">
+            <div class="bubble">
+              <h3>@carlf</h3><br/>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae.
+              <div class="over-bubble">
+                <div class="icon-mail-reply action"></div>
+                <div class="icon-retweet action"></div>
+                <div class="icon-star"></div>
+              </div>
+            </div>
+            <div class="arrow"></div>
+          </div>
+        </li>
+        <li>
+          <div class="avatar">
+            <img src="http://www.croop.cl/UI/twitter/images/russel.jpg">
+            <div class="hover">
+              <div class="icon-twitter"></div>
+            </div>
+          </div>
+          <div class="bubble-container">
+            <div class="bubble">
+            <h3>@russel</h3><br/>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae.
+              <div class="over-bubble">
+                <div class="icon-mail-reply action"></div>
+                <div class="icon-retweet action"></div>
+                <div class="icon-star"></div>
+              </div>
+            </div>
+            <div class="arrow"></div>
+          </div>
+        </li>
+        <li>
+          <div class="avatar">
+            <img src="http://www.croop.cl/UI/twitter/images/carl.jpg">
+            <div class="hover">
+              <div class="icon-twitter"></div>
+            </div>
+          </div>
+          <div class="bubble-container">
+            <div class="bubble">
+              <h3>@carlf</h3><br/>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, iusto, maxime, ullam autem a voluptate rem quos repudiandae.
+              <div class="over-bubble">
+                <div class="icon-mail-reply action"></div>
+                <div class="icon-retweet action"></div>
+                <div class="icon-star"></div>
+              </div>
+            </div>
+            <div class="arrow"></div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    </div>
+    </div><!-- /.modal-content -->
+  </div><!-- /.modal -->
+</div>
+ 
+  <script src="lib/streamgraph.js"></script>
+   <script type="text/javascript">
+    $("#myModal").on('hidden.bs.modal', function () {
+      $('.graph').empty();
+    });
   </script>
+  <script type="text/javascript" src="lib/initial.js"></script>
 </body>
 
 </html>
