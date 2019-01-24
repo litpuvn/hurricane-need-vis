@@ -31,8 +31,8 @@ body {
   width: 42.5%;
 }
 
-.up{
-  height: 42.5%;
+.up {
+  height: 45%;
   right: 10%;
 }
 
@@ -40,11 +40,11 @@ body {
   top: 50.5%;
   height: 47.5%;
   left: 10.5%;
-/*  min-height: 300px;
+  /*  min-height: 300px;
   min-width: 500px;*/
 }
 
-svg{
+svg {
   overflow: scroll;
   position: absolute;
   left: 10%;
@@ -63,38 +63,39 @@ svg g {
   float: left;
 }
 
-#chart{
-  min-width:500px;
-  min-height: 400px; 
+#chart {
+  min-width: 500px;
+  min-height: 400px;
 }
 
-#chartAll{
-  min-width:500px;
-  min-height: 400px; 
+#chartAll {
+  min-width: 500px;
+  min-height: 400px;
   z-index: 1;
 }
 
 .menu {
-    height: 30px;
-    margin-left: 20px;
-    display:inline-block;
-    color:#FFFFFF;
-    background:#183442;
-    vertical-align:middle;
-    text-align: center;
-    padding-left: 8px;
-    padding-right: 8px;
-    font-size: 25px;
+  height: 30px;
+  margin-left: 20px;
+  display: inline-block;
+  color: #FFFFFF;
+  background: #183442;
+  vertical-align: middle;
+  text-align: center;
+  padding-left: 8px;
+  padding-right: 8px;
+  font-size: 25px;
 }
 
-.panel-left-header { /*menu*/
-    background-color: #183442;
-    padding-right: 15px;
-    padding-left: 15px;
-    padding-top: 15px;
-    padding-bottom: 15px;
-    margin-right: auto;
-    margin-left: auto;
+.panel-left-header {
+  /*menu*/
+  background-color: #183442;
+  padding-right: 15px;
+  padding-left: 15px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 /*.menu-button:hover {
@@ -118,10 +119,11 @@ svg g {
     border: solid 2px black;
 }
 */
-#ids{
-    font-family: Impact;
-    font-size: 30px;
+#ids {
+  font-family: Impact;
+  font-size: 30px;
 }
+
 /*.region_name{
  
 }*/
