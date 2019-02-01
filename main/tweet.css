@@ -1,16 +1,20 @@
 .tweet{
-  max-height: 300px;
+  max-height: 530px;
   overflow-y: scroll;
+  transition-duration: 0.5s;
 }
 
-.modal-body{
-  overflow: hidden;
-  max-height: 850px;
+.tweet_title text{
+  font-family: Impact;
+  font-size: 30px;
+  text-align: center;
+  display: block;
 }
 
 #streamgraph{
-  width: 800px;
-  height: 400px;
+  width: 1200px;
+  height: 600px;
+  transition-duration: 1s;
 }
 
 * {
@@ -51,14 +55,14 @@
   border-right: 20px solid #ecf0f1; }
 
 .timeline {
-  width: 800px;
+  width: 100%;
   display: inline;
   margin: auto;
   background-color: #dde1e2;
   padding-bottom: 2em;
   padding-left: 0em;
   border-bottom-right-radius: 8px;
-  margin-bottom: 2em; 
+  margin-bottom: 2em;
   list-style-type: none;
 }
 
@@ -200,4 +204,3 @@ h3 {
     width: 100%;
     display: block;
     font-size: 1.2em; }
-
