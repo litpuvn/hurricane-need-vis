@@ -1,4 +1,6 @@
-[
+//Show region_concern
+var region_concern =
+{"features":[
  {
    "region": 1,
    "concern": "water,house,oil",
@@ -527,4 +529,4 @@
    "context": " Communication",
    "count": 23
  }
-]
+]};

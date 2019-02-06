@@ -1,0 +1,446 @@
+//Show userConcern via wordCloud 
+var userData =
+{features:
+[
+ {
+   "region": 1,
+   "user": 1,
+   "user_content": "Region1.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 2,
+   "user": 2,
+   "user_content": "Region2.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 3,
+   "user": 3,
+   "user_content": "Region3.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 4,
+   "user": 4,
+   "user_content": "Region4.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 5,
+   "user": 5,
+   "user_content": "Region5.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 6,
+   "user": 6,
+   "user_content": "Region6.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 7,
+   "user": 7,
+   "user_content": "Region7.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 8,
+   "user": 8,
+   "user_content": "Region8.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 9,
+   "user": 9,
+   "user_content": "Region9.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 10,
+   "user": 10,
+   "user_content": "Region10.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 11,
+   "user": 11,
+   "user_content": "Region11.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 12,
+   "user": 12,
+   "user_content": "Region12.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 13,
+   "user": 13,
+   "user_content": "Region13.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 14,
+   "user": 14,
+   "user_content": "Region14.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 15,
+   "user": 15,
+   "user_content": "Region15.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 16,
+   "user": 16,
+   "user_content": "Region16.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 17,
+   "user": 17,
+   "user_content": "Region17.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 18,
+   "user": 18,
+   "user_content": "Region18.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 19,
+   "user": 19,
+   "user_content": "Region19.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 20,
+   "user": 20,
+   "user_content": "Region20.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 21,
+   "user": 21,
+   "user_content": "Region21.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 22,
+   "user": 22,
+   "user_content": "Region22.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 23,
+   "user": 23,
+   "user_content": "Region23.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 24,
+   "user": 24,
+   "user_content": "Region24.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 25,
+   "user": 25,
+   "user_content": "Region25.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 26,
+   "user": 26,
+   "user_content": "Region26.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 27,
+   "user": 27,
+   "user_content": "Region27.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 28,
+   "user": 28,
+   "user_content": "Region28.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 29,
+   "user": 29,
+   "user_content": "Region29.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 30,
+   "user": 30,
+   "user_content": "Region30.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 31,
+   "user": 31,
+   "user_content": "Region31.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 32,
+   "user": 32,
+   "user_content": "Region32.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 33,
+   "user": 33,
+   "user_content": "Region33.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 34,
+   "user": 34,
+   "user_content": "Region34.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 35,
+   "user": 35,
+   "user_content": "Region35.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 36,
+   "user": 36,
+   "user_content": "Region36.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 37,
+   "user": 37,
+   "user_content": "Region37.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 38,
+   "user": 38,
+   "user_content": "Region38.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 39,
+   "user": 39,
+   "user_content": "Region39.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 40,
+   "user": 40,
+   "user_content": "Region40.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 41,
+   "user": 41,
+   "user_content": "Region41.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 42,
+   "user": 42,
+   "user_content": "Region42.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 43,
+   "user": 43,
+   "user_content": "Region43.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 44,
+   "user": 44,
+   "user_content": "Region44.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 45,
+   "user": 45,
+   "user_content": "Region45.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 46,
+   "user": 46,
+   "user_content": "Region46.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 47,
+   "user": 47,
+   "user_content": "Region47.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 48,
+   "user": 48,
+   "user_content": "Region48.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 49,
+   "user": 49,
+   "user_content": "Region49.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 50,
+   "user": 50,
+   "user_content": "Region50.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 51,
+   "user": 51,
+   "user_content": "Region51.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 52,
+   "user": 52,
+   "user_content": "Region52.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 53,
+   "user": 53,
+   "user_content": "Region53.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 54,
+   "user": 54,
+   "user_content": "Region54.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 55,
+   "user": 55,
+   "user_content": "Region55.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 56,
+   "user": 56,
+   "user_content": "Region56.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 57,
+   "user": 57,
+   "user_content": "Region57.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 58,
+   "user": 58,
+   "user_content": "Region58.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 59,
+   "user": 59,
+   "user_content": "Region59.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 60,
+   "user": 60,
+   "user_content": "Region60.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 61,
+   "user": 61,
+   "user_content": "Region61.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 62,
+   "user": 62,
+   "user_content": "Region62.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 63,
+   "user": 63,
+   "user_content": "Region63.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 64,
+   "user": 64,
+   "user_content": "Region64.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 65,
+   "user": 65,
+   "user_content": "Region65.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 66,
+   "user": 66,
+   "user_content": "Region66.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 67,
+   "user": 67,
+   "user_content": "Region67.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 68,
+   "user": 68,
+   "user_content": "Region68.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 69,
+   "user": 69,
+   "user_content": "Region69.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 70,
+   "user": 70,
+   "user_content": "Region70.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 71,
+   "user": 71,
+   "user_content": "Region71.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 72,
+   "user": 72,
+   "user_content": "Region72.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 73,
+   "user": 73,
+   "user_content": "Region73.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 74,
+   "user": 74,
+   "user_content": "Region74.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 75,
+   "user": 75,
+   "user_content": "Region75.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 76,
+   "user": 76,
+   "user_content": "Region76.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 77,
+   "user": 77,
+   "user_content": "Region77.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 78,
+   "user": 78,
+   "user_content": "Region78.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 79,
+   "user": 79,
+   "user_content": "Region79.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 80,
+   "user": 80,
+   "user_content": "Region80.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 81,
+   "user": 81,
+   "user_content": "Region81.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 82,
+   "user": 82,
+   "user_content": "Region82.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 83,
+   "user": 83,
+   "user_content": "Region83.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 84,
+   "user": 84,
+   "user_content": "Region84.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 85,
+   "user": 85,
+   "user_content": "Region85.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 86,
+   "user": 86,
+   "user_content": "Region86.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 87,
+   "user": 87,
+   "user_content": "Region87.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ },
+ {
+   "region": 88,
+   "user": 88,
+   "user_content": "Region88.If I could save time in a bottle the first thing that I\'d like to do is to save every day until eternity passes away just to spend them with you."
+ }
+]
+};
