@@ -1,4 +1,5 @@
-html,body {
+html,
+body {
   font-family: Arial;
   height: 100%;
 }
@@ -6,14 +7,17 @@ html,body {
 .navbar {
   background-color: #e74c3c !important;
 }
+
 .navbar .navbar-brand {
   color: #ecf0f1 !important;
 }
+
 .navbar .navbar-brand:hover,
 .navbar .navbar-brand:focus {
   color: #ffbbbc !important;
 }
-.navbar .navbar-text{
+
+.navbar .navbar-text {
   color: #ecf0f1 !important;
 }
 
@@ -22,10 +26,10 @@ html,body {
   background-color: #e74c3c;
 }
 
-.footer-copyright{
+.footer-copyright {
   font-size: 15pt;
   text-align: center;
-  color:#ecf0f1 !important;
+  color: #ecf0f1 !important;
 }
 
 .footer .footer-copyright:hover,
@@ -33,7 +37,7 @@ html,body {
   color: #ffbbbc !important;
 }
 
-.concern_region_name{
+.concern_region_name {
   font-family: Impact;
   font-size: 30px;
   display: block;
@@ -41,6 +45,7 @@ html,body {
   /* min-width: 100px;
   min-height: 100px; */
 }
+
 /* .split {
   height: 100%;
   position: relative;
@@ -68,10 +73,10 @@ html,body {
   height: 50%;
 } */
 
-.bottom{
-  background-color:black;
-  min-width:1500px;
-  min-height:600px;
+.bottom {
+  background-color: black;
+  min-width: 1500px;
+  min-height: 600px;
   position: relative;
 }
 
@@ -122,10 +127,13 @@ svg g {
   font-size: 30px;
 }
 
-#region_name{
+#region_name {
   margin-top: 10px;
 }
 
-.container-fluid{
+.container-fluid {}
 
+.c3-title {
+  font-family: Impact !important;
+  font-size: 20px !important;
 }
