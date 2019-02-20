@@ -2,8 +2,9 @@
 
 live demo: https://litpuvn.github.io/hurricane-need-vis
 
-Data Description：
-  map.json: houston counties and districts' geojson -- reference from   https://github.com/codeforamerica/click_that_hood/blob/master/public/data/houston.geojson
+Data Description：\n
+  map.json: geojson of houston counties and districts\n
+            reference from  https://github.com/codeforamerica/click_that_hood/blob/master/public/data/houston.geojson \n
   
   userData.json: show userConcern via wordCloud 
     {
