@@ -1,6 +1,6 @@
 # hurricane-need-vis
 
-**live demo：** https://litpuvn.github.io/hurricane-need-vis
+**Live demo：** https://litpuvn.github.io/hurricane-need-vis
 
 **Data Description：**
 <br>
