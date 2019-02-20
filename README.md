@@ -32,7 +32,7 @@
   }
 ```
 >region_data.json: show regional needs'frequency via line graph
-'''
+```
 {
     "region_id": regionID,
     "needs_frequency": [
@@ -41,7 +41,7 @@
         ["item C", the number of needs frequency]
     ]
 }
-'''
+```
 >streamData.js: show regionConcern via streamgraph (javascript object)
   
   
