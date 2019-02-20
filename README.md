@@ -6,7 +6,7 @@
 <br>
 >map.json: geojson of houston counties and districts from
   [reference](https://github.com/codeforamerica/click_that_hood/blob/master/public/data/houston.geojson) <br>
->userData.json: show userConcern via wordCloud 
+>userData.json: show user's concern via wordCloud 
 ```
   {
      "region": regionID,
@@ -14,7 +14,7 @@
      "user_content": userConcern
   }
 ``` 
->region_concern.json: show region concern via map and dots
+>region_concern.json: show regional concern via map and dots
 ```
    {
      "region": regionID,
@@ -31,7 +31,18 @@
     "user_content": userConcern,
   }
 ```
->streamData.js: show regionConern via streamgraph (javascript object)
+>region_data.json: show regional needs'frequency via line graph
+'''
+{
+    "region_id": regionID,
+    "needs_frequency": [
+        ["item A", the number of needs frequency],
+        ["item B", the number of needs frequency],
+        ["item C", the number of needs frequency]
+    ]
+}
+'''
+>streamData.js: show regionConcern via streamgraph (javascript object)
   
   
     
