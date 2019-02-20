@@ -2,11 +2,11 @@
 
 **live demo：** https://litpuvn.github.io/hurricane-need-vis
 
-**Data Description**
+**Data Description：**
 <br>
 >map.json: geojson of houston counties and districts from
   [reference](https://github.com/codeforamerica/click_that_hood/blob/master/public/data/houston.geojson) <br>
-  userData.json: show userConcern via wordCloud 
+>userData.json: show userConcern via wordCloud 
 ```
   {
      "region": regionID,
@@ -14,7 +14,7 @@
      "user_content": userConcern
   }
 ``` 
-region_concern.json: show region concern via map and dots
+>region_concern.json: show region concern via map and dots
 ```
    {
      "region": regionID,
@@ -23,7 +23,7 @@ region_concern.json: show region concern via map and dots
      "count": needs_frequency
    }
 ```
-need_tweet.json: show user's needs from tweet
+>need_tweet.json: show user's needs from tweet
 ```
   {
     "region": regionID,
@@ -31,7 +31,7 @@ need_tweet.json: show user's needs from tweet
     "user_content": userConcern,
   }
 ```
-streamData.js: show regionConern via streamgraph (javascript object)
+>streamData.js: show regionConern via streamgraph (javascript object)
   
   
     
