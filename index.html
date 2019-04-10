@@ -9,13 +9,19 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="lib/jquery.min.js"></script>
   <script src="lib/bootstrap.min.js"></script>
-  
+
   <!-- Json for data -->
   <script src='data/map.json'></script>
   <script src='data/region_concern.json'></script>
   <script src='data/userData.json'></script>
   <script src='lib/streamData.js'></script>
-  <script src='data/region_data.json'></script>
+
+  <!-- line chart -->
+  <!-- <script src='data/region_data.json'></script> -->
+  <script src="data/raw_data/new_norm_smooth_line.json"></script>
+  <!-- choropleth map json data -->
+  <script src='data/raw_data/test.json'></script>
+  <script src="lib/test.js"></script>
 
   <!--css for leaflet-->
   <link rel="stylesheet" href="main/leaflet.css" />
@@ -24,6 +30,9 @@
   <!-- <script src="lib/houston.js"></script> -->
 
   <link rel="stylesheet" type="text/css" href="main/map.css" />
+
+  <!-- js for timelineSlider -->
+  <script src="lib/leaflet-timeline-slider.js"></script>
 
   <!--js for wordcloud-->
   <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/c3/0.4.24/c3.css">
@@ -36,24 +45,56 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js"></script>
 
+  <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
   <script src="lib/cloud.js"></script>
   <script src="lib/main.js" defer></script>
   <script src="lib/wordcloud.js"></script>
-
   <!-- https://tmroyal.github.io/Chart.Streamgraph -->
   <script src="lib/Chart.Streamgraph.S.js"></script>
   <link rel="stylesheet" type="text/css" href="main/tweet.css">
-
 </head>
 
 <body>
-  <nav class="navbar navbar-default" role="navigation">
+  <ul class="nav nav-tabs">
+    <a class="navbar-brand">People Need During Hurricane Harvey</a>
+  <li role="presentation" class="dropdown">
+    <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+      Date <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li onclick="test1(823)" aria-haspopup="true" aria-expanded="false">2017-8-23</li>
+      <li onclick="test1(824)" aria-haspopup="true" aria-expanded="false">2017-8-24</li>
+      <li onclick="test1(825)" aria-haspopup="true" aria-expanded="false">2017-8-25</li>
+      <li onclick="test1(826)" aria-haspopup="true" aria-expanded="false">2017-8-26</li>
+      <li onclick="test1(827)" aria-haspopup="true" aria-expanded="false">2017-8-27</li>
+      <li onclick="test1(828)" aria-haspopup="true" aria-expanded="false">2017-8-28</li>
+      <li onclick="test1(829)" aria-haspopup="true" aria-expanded="false">2017-8-29</li>
+      <li onclick="test1(830)" aria-haspopup="true" aria-expanded="false">2017-8-30</li>
+      <li onclick="test1(901)" aria-haspopup="true" aria-expanded="false">2017-9-01</li>
+    </ul>
+  </li>
+</ul>
+  <!-- <nav class="navbar navbar-default" role="navigation">
     <div class="container-fluid">
       <div class="navbar-header">
-        <a class="navbar-brand">People Need During Hurricane Harvey</a>
+        <ul class="nav nav-pills">
+          <a class="navbar-brand">People Need During Hurricane Harvey</a>
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">
+              Date <span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li onclick="test1()">2017-8-23</li>
+              <li>Page 1-2</li>
+              <li>Page 1-3</li>
+            </ul>
+          </li>
+          <li><a href="#">Page 2</a></li>
+          <li><a href="#">Page 3</a></li>
+        </ul>
       </div>
     <div>
-  </nav>
+  </nav> -->
 
 <div class="container-fluid">
 <!-- <div class="container-fluid"> -->
@@ -62,110 +103,201 @@
         <div id="map"></div>
     </div>
     <div class="col-md-2">
-      <svg width="200" height="800">
-        <g transform="translate(0, 25)" id="water">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#3366cc" />
-          <text x="24" y="9" dy=".35em" fill="black">Water</text>
-          <text x="100" y="9" dy=".35em" fill="black">Flooded</text>
+      <svg width="250" height="700">
+        <g transform = "translate(0,25)" id = "water">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#F08080"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Water</text>
         </g>
-        <g transform="translate(0, 50)" id="help">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#dc3912" />
-          <text x="24" y="9" dy=".35em" fill="black">Help</text>
-          <text x="100" y="9" dy=".35em" fill="black">Donation</text>
+        <g transform = "translate(0,50)" id = "help">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#BC8F8F"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Help</text>
         </g>
-        <g transform="translate(0, 75)" id="food">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#ff9900" />
-          <text x="24" y="9" dy=".35em" fill="black">Food</text>
-          <text x="100" y="9" dy=".35em" fill="black">Shortage</text>
+        <g transform = "translate(0,75)" id = "need">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#CD5C5C"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Need</text>
         </g>
-        <g transform="translate(0, 100)" id="gas">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#109618" />
-          <text x="24" y="9" dy=".35em" fill="black">Gas</text>
-          <text x="100" y="9" dy=".35em" fill="black">Requirement</text>
+        <g transform = "translate(0,100)" id = "people">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF0000"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">People</text>
         </g>
-        <g transform="translate(0, 125)" id="pet">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#990099" />
-          <text x="24" y="9" dy=".35em" fill="black">Pet</text>
-          <text x="100" y="9" dy=".35em" fill="black">Care</text>
+        <g transform = "translate(0,125)" id = "store">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#A52A2A"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Store</text>
         </g>
-        <g transform="translate(0, 150)" id="power">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#0099c6" />
-          <text x="24" y="9" dy=".35em" fill="black">Power</text>
-          <text x="100" y="9" dy=".35em" fill="black">Fluctuation</text>
+        <g transform = "translate(0,150)" id = "safe">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#B22222"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Safe</text>
         </g>
-        <g transform="translate(0, 175)" id="clothes">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#dd4477" />
-          <text x="24" y="9" dy=".35em" fill="black">Clothes</text>
-          <text x="100" y="9" dy=".35em" fill="black">Need</text>
+        <g transform = "translate(0,175)" id = "home">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#8B0000"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Home</text>
         </g>
-        <g transform="translate(0, 200)" id="diaper">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#66aa00" />
-          <text x="24" y="9" dy=".35em" fill="black">Diaper</text>
-          <text x="100" y="9" dy=".35em" fill="black">Sanitization</text>
+        <g transform = "translate(0,200)" id = "flood">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#800000"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Flood</text>
         </g>
-        <g transform="translate(0, 225)" id="house">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#b82e2e" />
-          <text x="24" y="9" dy=".35em" fill="black">House</text>
-          <text x="100" y="9" dy=".35em" fill="black">Living</text>
+        <g transform = "translate(0,225)" id = "family">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FFA07A"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Family</text>
         </g>
-        <g transform="translate(0, 250)" id="boat">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#316395" />
-          <text x="24" y="9" dy=".35em" fill="black">Boat</text>
-          <text x="100" y="9" dy=".35em" fill="black">Travel</text>
+        <g transform = "translate(0,250)" id = "school">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF7F50"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">School</text>
         </g>
-        <g transform="translate(0, 275)" id="call">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#994499" />
-          <text x="24" y="9" dy=".35em" fill="black">Call</text>
-          <text x="100" y="9" dy=".35em" fill="black">Communication</text>
+        <g transform = "translate(0,275)" id = "nurse">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF4500"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Nurse</text>
         </g>
-        <g transform="translate(0, 300)" id="hospital">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#22aa99" />
-          <text x="24" y="9" dy=".35em" fill="black">Hospital</text>
-          <text x="100" y="9" dy=".35em" fill="black">Health</text>
+        <g transform = "translate(0,300)" id = "support">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#E9967A"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Support</text>
         </g>
-        <g transform="translate(0, 325)" id="volunteer">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#aaaa11" />
-          <text x="24" y="9" dy=".35em" fill="black">Volunteer</text>
-          <text x="100" y="9" dy=".35em" fill="black">Help</text>
+        <g transform = "translate(0,325)" id = "donate">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF6347"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Donate</text>
         </g>
-        <g transform="translate(0, 350)" id="money">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#6633cc" />
-          <text x="24" y="9" dy=".35em" fill="black">Money</text>
-          <text x="100" y="9" dy=".35em" fill="black">Need</text>
+        <g transform = "translate(0,350)" id = "food">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#0000FF"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Food</text>
         </g>
-        <g transform="translate(0, 375)" id="medicine">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#e67300" />
-          <text x="24" y="9" dy=".35em" fill="black">Medicine</text>
-          <text x="100" y="9" dy=".35em" fill="black">Cure</text>
+        <g transform = "translate(0,375)" id = "service">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#0000CD"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Service</text>
         </g>
-        <g transform="translate(0, 400)" id="fund">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#8b0707" />
-          <text x="24" y="9" dy=".35em" fill="black">Fund</text>
-          <text x="100" y="9" dy=".35em" fill="black">Relief</text>
+        <g transform = "translate(0,400)" id = "call">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#191970"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Call</text>
         </g>
-        <g transform="translate(0, 425)" id="charity">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#651067" />
-          <text x="24" y="9" dy=".35em" fill="black">Charity</text>
-          <text x="100" y="9" dy=".35em" fill="black">Donation</text>
+        <g transform = "translate(0,425)" id = "rescue">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#00008B"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Rescue</text>
         </g>
-        <g transform="translate(0, 450)" id="rescue">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#329262" />
-          <text x="24" y="9" dy=".35em" fill="black">Rescue</text>
-          <text x="100" y="9" dy=".35em" fill="black">Help</text>
+        <g transform = "translate(0,450)" id = "donation">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#000080"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Donation</text>
         </g>
-        <g transform="translate(0, 475)" id="oil">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#5574a6" />
-          <text x="24" y="9" dy=".35em" fill="black">Oil</text>
-          <text x="100" y="9" dy=".35em" fill="black">Need</text>
+        <g transform = "translate(0,475)" id = "relief">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#4169E1"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Relief</text>
         </g>
-        <g transform="translate(0, 500)" id="shop">
-          <circle x="1066" y="61" cx="12" cy="9" r="10" stroke-width="3" fill="#3b3eac" />
-          <text x="24" y="9" dy=".35em" fill="black">Shop</text>
-          <text x="100" y="9" dy=".35em" fill="black">Essentials</text>
+        <g transform = "translate(0,500)" id = "shelter">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#6495ED"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Shelter</text>
+        </g>
+        <g transform = "translate(0,525)" id = "volunteer">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#00FFFF"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Volunteer</text>
+        </g>
+        <g transform = "translate(0,550)" id = "community">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#00FFFF"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Community</text>
+        </g>
+        <g transform = "translate(0,575)" id = "boat">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#00CED1"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Boat</text>
+        </g>
+        <g transform = "translate(0,600)" id = "money">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#2F4F4F"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Money</text>
+        </g>
+        <g transform = "translate(120,25)" id = "victim">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#008B8B"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Victim</text>
+        </g>
+        <g transform = "translate(120,50)" id = "supply">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#008080"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Supply</text>
+        </g>
+        <g transform = "translate(120,75)" id = "car">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#48D1CC"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Car</text>
+        </g>
+        <g transform = "translate(120,100)" id = "power">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#20B2AA"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Power</text>
+        </g>
+        <g transform = "translate(120,125)" id = "restaurant">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#40E0D0"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Restaurant</text>
+        </g>
+        <g transform = "translate(120,150)" id = "emergency">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#7FFFAA"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Emergency</text>
+        </g>
+        <g transform = "translate(120,175)" id = "truck">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#00FA9A"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Truck</text>
+        </g>
+        <g transform = "translate(120,200)" id = "dog">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#00FF7F"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Dog</text>
+        </g>
+        <g transform = "translate(120,225)" id = "gas">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#DB7093"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Gas</text>
+        </g>
+        <g transform = "translate(120,250)" id = "damage">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF69B4"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Damage</text>
+        </g>
+        <g transform = "translate(120,275)" id = "contact">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF1493"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Contact</text>
+        </g>
+        <g transform = "translate(120,300)" id = "wine">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#C71585"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Wine</text>
+        </g>
+        <g transform = "translate(120,325)" id = "text">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#DA70D6"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Text</text>
+        </g>
+        <g transform = "translate(120,350)" id = "beer">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#D8BFD8"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Beer</text>
+        </g>
+        <g transform = "translate(120,375)" id = "grocery">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#DDA0DD"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Grocery</text>
+        </g>
+        <g transform = "translate(120,400)" id = "tank">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#EE82EE"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Tank</text>
+        </g>
+        <g transform = "translate(120,425)" id = "clothes">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF00FF"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Clothes</text>
+        </g>
+        <g transform = "translate(120,450)" id = "trail">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#FF00FF"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Trail</text>
+        </g>
+        <g transform = "translate(120,475)" id = "fund">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#8B008B"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Fund</text>
+        </g>
+        <g transform = "translate(120,500)" id = "bottle">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#800080"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Bottle</text>
+        </g>
+        <g transform = "translate(120,525)" id = "assistance">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#BA55D3"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Assistance</text>
+        </g>
+        <g transform = "translate(120,550)" id = "oil">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#9400D3"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Oil</text>
+        </g>
+        <g transform = "translate(120,575)" id = "advisory">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#9932CC"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Advisory</text>
+        </g>
+        <g transform = "translate(120,600)" id = "cable">
+           <circle x = "1066" y = "61" cx = "12" cy = "9" r = "10" stroke-width = "3" fill = "#4B0082"/>
+           <text x = "24" y = "9" dy = ".35em" fill = "black">Cable</text>
         </g>
       </svg>
     </div>
-
     <div class="col-md-5">
       <div class="split">
         <div class="up">
@@ -179,9 +311,42 @@
       </div>
     </div>
   </div>
-
-    <div class="container-fluid" style="margin-bottom:10px; min-height:600px;">
-      <div class="row">
+  <div class="col-md-1"></div>
+  <div class="col-md-7">
+    <section>
+      <button type="button" name="hour0" onclick="needsByHours(00)" class="btn" id="btn">00</button>
+      <button type="button" name="hour1" onclick="needsByHours(01)" class="btn" id="btn">01</button>
+      <button type="button" name="hour2" onclick="needsByHours(02)" class="btn" id="btn">02</button>
+      <button type="button" name="hour3" onclick="needsByHours(03)" class="btn" id="btn">03</button>
+      <button type="button" name="hour4" onclick="needsByHours(04)" class="btn" id="btn">04</button>
+      <button type="button" name="hour5" onclick="needsByHours(05)" class="btn" id="btn">05</button>
+      <button type="button" name="hour6" onclick="needsByHours(06)" class="btn" id="btn">06</button>
+      <button type="button" name="hour7" onclick="needsByHours(07)" class="btn" id="btn">07</button>
+      <button type="button" name="hour8" onclick="needsByHours(08)" class="btn" id="btn">08</button>
+      <button type="button" name="hour9" onclick="needsByHours(09)" class="btn" id="btn">09</button>
+      <button type="button" name="hour10" onclick="needsByHours(10)" class="btn" id="btn">10</button>
+      <button type="button" name="hour11" onclick="needsByHours(11)" class="btn" id="btn">11</button>
+    </section>
+    <br>
+    <section>
+      <button type="button" name="hour12" onclick="needsByHours(12)" class="btn" id="btn">12</button>
+      <button type="button" name="hour13" onclick="needsByHours(13)" class="btn" id="btn">13</button>
+      <button type="button" name="hour14" onclick="needsByHours(14)" class="btn" id="btn">14</button>
+      <button type="button" name="hour15" onclick="needsByHours(15)" class="btn" id="btn">15</button>
+      <button type="button" name="hour16" onclick="needsByHours(16)" class="btn" id="btn">16</button>
+      <button type="button" name="hour17" onclick="needsByHours(17)" class="btn" id="btn">17</button>
+      <button type="button" name="hour18" onclick="needsByHours(18)" class="btn" id="btn">18</button>
+      <button type="button" name="hour19" onclick="needsByHours(19)" class="btn" id="btn">19</button>
+      <button type="button" name="hour20" onclick="needsByHours(20)" class="btn" id="btn">20</button>
+      <button type="button" name="hour21" onclick="needsByHours(21)" class="btn" id="btn">21</button>
+      <button type="button" name="hour22" onclick="needsByHours(22)" class="btn" id="btn">22</button>
+      <button type="button" name="hour23" onclick="needsByHours(23)" class="btn" id="btn">23</button>
+    </section>
+  </div>
+  <div class="col-md-4"></div>
+  <div class="col-md-12" style="height:20px"></div>
+  <div class="container-fluid" style="margin-bottom:10px; min-height:600px;">
+     <div class="row">
         <div class="col-md-8">
           <div class="concern_region_name">
               <!-- <text>Region: </text> -->
@@ -201,6 +366,7 @@
   <script src="lib/streamgraph.js"></script>
   <script src="lib/tweet.js"></script>
   <script src="lib/map.js"></script>
+
 </div><!--container-->
 
 <!-- Footer -->
