@@ -46,40 +46,13 @@ body {
   min-height: 100px; */
 }
 
-/* .split {
-  height: 100%;
-  position: relative;
-  /* z-index: 1;
-  overflow: hidden;
-} */
-
-/* .left {
-  left: 0;
-  width: 50%;
-  float: left;
-} */
-
-/* .middle {
-  left: 42.5%;
-  width: 12.5%;
-} */
-/*
-.right {
-  right: 2%;
-  width: 42.5%;
-}
-*/
-/* .up {
-  height: 50%;
-} */
-
 .bottom {
   background-color: black;
   min-width: 1500px;
   min-height: 600px;
   position: relative;
 }
-
+/*
 svg {
   position: relative;
   display: block;
@@ -88,7 +61,7 @@ svg {
 
 svg g {
   opacity: 0.9;
-}
+} */
 
 
 .centered img {
@@ -96,32 +69,12 @@ svg g {
   border-radius: 50%;
 }
 
-/* #chrt {
-  float: left;
-} */
-
 #chart {
-  position: absolute;
-  left: 150px;
+  width: 750px;
+  height: 300px;
   overflow: visible;
 }
 
-/*.concern_flow_overlay{
-    background: transparent !important;
-}*/
-
-/*.concern_flow{
-    width: 1000px;
-    height: 600px;
-    background-color: #FFFFFF;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    margin: auto;
-    border: solid 2px black;
-}
-*/
 #ids {
   font-family: Impact;
   font-size: 30px;
@@ -136,4 +89,14 @@ svg g {
 .c3-title {
   font-family: Impact !important;
   font-size: 20px !important;
+}
+
+.btn{
+  width: 45px;
+  height: 30px;
+}
+
+.concern_flow{
+  min-width: 900px;
+  min-height: 600px;
 }
