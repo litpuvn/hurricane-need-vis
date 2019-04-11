@@ -4,18 +4,23 @@ body {
   height: 100%;
 }
 
+.dropdown{
+  font-size: 18px;
+  background-color: #ffbbbc;
+}
+
 .navbar {
   background-color: #e74c3c !important;
 }
 
 .navbar .navbar-brand {
-  color: #ecf0f1 !important;
-}
-
-.navbar .navbar-brand:hover,
-.navbar .navbar-brand:focus {
   color: #ffbbbc !important;
 }
+
+/* .navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
+  color: #ffbbbc !important;
+} */
 
 .navbar .navbar-text {
   color: #ecf0f1 !important;
@@ -91,9 +96,57 @@ svg g {
   font-size: 20px !important;
 }
 
-.btn{
-  width: 45px;
+/* .btn{
+   width: 45px;
   height: 30px;
+  border: 2px solid black;
+  border-radius: 500px;
+  background-color: white;
+  color: black;
+  padding: 10px 20px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.hour {
+  border-color: #f44336;
+  color: red;
+}
+
+.hour:hover {
+  background: #f44336;
+  color: white;
+} */
+
+.slider-selection {
+	background: #ef3b2c !important;
+}
+
+.slider-handle {
+	background: #cb181d !important;
+}
+.slider-tick.in-selection{
+  background: #cb181d !important;
+}
+ .slider.slider-horizontal{
+   width:750px !important;
+ }
+.slider .tooltip{
+  padding:2px;
+}
+.slider .tooltip-inner{
+  font-size: 18px;
+  opacity: 1;
+  background: #cb181d !important;
+}
+
+.tooltip.top .tooltip-arrow {
+   border-top-color: #f44336 !important;
+
+}
+ .slider .tooltip.bs-tether-element-attached-top.tooltip-inner::before{
+  border-bottom-color:red!important;
+  background: #cb181d !important;
 }
 
 .concern_flow{
