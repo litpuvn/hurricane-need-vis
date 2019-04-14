@@ -20,9 +20,9 @@
 
   <!-- line chart -->
   <!-- <script src='data/region_data.json'></script> -->
-  <script src="data/new_norm_smooth_line.json"></script>
+  <script src="data/raw_data/final_line.json"></script>
   <!-- choropleth map json data -->
-  <script src='data/test.json'></script>
+  <script src='data/raw_data/test_withstamp.json'></script>
   <script src="lib/test.js"></script>
 
   <!--css for leaflet-->
@@ -50,59 +50,58 @@
   <script src="https://rawgit.com/jasondavies/d3-cloud/master/build/d3.layout.cloud.js"></script>
   <script src="lib/cloud.js"></script>
   <script src="lib/main.js" defer></script>
-  <script src="lib/wordcloud.js"></script>
+  <!-- <script src="lib/wordcloud.js"></script> -->
   <!-- https://tmroyal.github.io/Chart.Streamgraph -->
   <script src="lib/Chart.Streamgraph.S.js"></script>
   <link rel="stylesheet" type="text/css" href="main/tweet.css">
+  <!-- <script type="text/javascript">
+  $("ul#day").on("click","li",function(){
+    alert($(this.a).text());
+    })
+  </script> -->
 </head>
 
 <body>
-  <!-- <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">People Need During Hurricane Harvey</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="#">Information</a></li>
-        <li><a href="#">Predict</a></li>
-      </ul>
-      <form class="navbar-form navbar-left" action="/action_page.php">
-        <div class="form-group">
-          <input type="text" class="form-control" placeholder="Search">
-        </div>
-        <button type="submit" class="btn btn-default">Submit</button>
-      </form>
-    </div>
-  </nav>
-<nav> -->
   <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
-	<div class="navbar-header">
-		<a class="navbar-brand" href="#">People Need During Hurricane Harvey</a>
-	</div>
-	<div>
-		<ul class="nav navbar-nav">
-			<li class="dropdown">
-				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-					Date
-					<b class="caret"></b>
-				</a>
-				<ul class="dropdown-menu">
-          <li onclick="test1(823)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-23</a></li>
-          <li onclick="test1(824)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-24</a></li>
-          <li onclick="test1(825)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-25</a></li>
-          <li onclick="test1(826)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-26</a></li>
-          <li onclick="test1(827)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-27</a></li>
-          <li onclick="test1(828)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-28</a></li>
-          <li onclick="test1(829)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-29</a></li>
-          <li onclick="test1(830)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-30</a></li>
-          <li onclick="test1(831)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-8-31</a></li>
-          <li onclick="test1(901)" aria-haspopup="true" aria-expanded="false"><a href="#">2017-9-01</a></li>
-				</ul>
-			</li>
-		</ul>
-	</div>
+	<div class="navbar-header my-header">
+    <table style="width: 85%">
+      <tr>
+        <td>
+          <div>
+        		<ul class="nav navbar-nav" style="display:inline;">
+        			<li class="dropdown">
+        				<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+        					Date
+        					<b class="caret"></b>
+        				</a>
+        				<ul id="day" class="dropdown-menu">
+                  <li id="li0823" class="day"><a href="#">2017-8-23</a></li>
+                  <li id="li0824" class="day"><a href="#">2017-8-24</a></li>
+                  <li id="li0825" class="day"><a href="#">2017-8-25</a></li>
+                  <li id="li0826" class="day"><a href="#">2017-8-26</a></li>
+                  <li id="li0827" class="day"><a href="#">2017-8-27</a></li>
+                  <li id="li0828" class="day"><a href="#">2017-8-28</a></li>
+                  <li id="li0829" class="day"><a href="#">2017-8-29</a></li>
+                  <li id="li0830" class="day"><a href="#">2017-8-30</a></li>
+                  <li id="li0831" class="day"><a href="#">2017-8-31</a></li>
+                  <li id="li0901" class="day"><a href="#">2017-9-01</a></li>
+        				</ul>
+        			</li>
+        		</ul>
+        	</div>
+
+        </td>
+        <td style="width: 20px;">
+
+        </td>
+        <td>
+           NiPred: NEED PREDICTOR FOR HURRICANE DISASTER RELIEF
+        </td>
+      </tr>
+    </table>
+
+  </div>
 	</div>
 </nav>
 
@@ -110,6 +109,7 @@
 <!-- <div class="container-fluid"> -->
   <div class="row">
     <div class="col-md-5">
+        <span id="map_title" style="text-align: center; display: block; ">Houston Need Heat Map</span>
         <div id="map"></div>
     </div>
     <div class="col-md-2">
@@ -332,35 +332,6 @@
           data-slider-max="23"
           data-slider-step="1"
           data-slider-tooltip="show" />
-      <!-- <span id="ex21CurrentSliderValLabel">Current Slider Value: <span id="ex21SliderVal">3</span></span> -->
-
-      <!-- <button type="button" name="hour0" onclick="needsByHours(00)" class="btn hour hour " id="btn" >00</button>
-      <button type="button" name="hour1" onclick="needsByHours(01)" class="btn hour" id="btn">01</button>
-      <button type="button" name="hour2" onclick="needsByHours(02)" class="btn hour" id="btn">02</button>
-      <button type="button" name="hour3" onclick="needsByHours(03)" class="btn hour" id="btn">03</button>
-      <button type="button" name="hour4" onclick="needsByHours(04)" class="btn hour" id="btn">04</button>
-      <button type="button" name="hour5" onclick="needsByHours(05)" class="btn hour" id="btn">05</button>
-      <button type="button" name="hour6" onclick="needsByHours(06)" class="btn hour" id="btn">06</button>
-      <button type="button" name="hour7" onclick="needsByHours(07)" class="btn hour" id="btn">07</button>
-      <button type="button" name="hour8" onclick="needsByHours(08)" class="btn hour" id="btn">08</button>
-      <button type="button" name="hour9" onclick="needsByHours(09)" class="btn hour" id="btn">09</button>
-      <button type="button" name="hour10" onclick="needsByHours(10)" class="btn hour" id="btn">10</button>
-      <button type="button" name="hour11" onclick="needsByHours(11)" class="btn hour" id="btn">11</button> -->
-    <!-- </section>
-    <section>
-      <button type="button" name="hour12" onclick="needsByHours(12)" class="btn hour" id="btn">12</button>
-      <button type="button" name="hour13" onclick="needsByHours(13)" class="btn hour" id="btn">13</button>
-      <button type="button" name="hour14" onclick="needsByHours(14)" class="btn hour" id="btn">14</button>
-      <button type="button" name="hour15" onclick="needsByHours(15)" class="btn hour" id="btn">15</button>
-      <button type="button" name="hour16" onclick="needsByHours(16)" class="btn hour" id="btn">16</button>
-      <button type="button" name="hour17" onclick="needsByHours(17)" class="btn hour" id="btn">17</button>
-      <button type="button" name="hour18" onclick="needsByHours(18)" class="btn hour" id="btn">18</button>
-      <button type="button" name="hour19" onclick="needsByHours(19)" class="btn hour" id="btn">19</button>
-      <button type="button" name="hour20" onclick="needsByHours(20)" class="btn hour" id="btn">20</button>
-      <button type="button" name="hour21" onclick="needsByHours(21)" class="btn hour" id="btn">21</button>
-      <button type="button" name="hour22" onclick="needsByHours(22)" class="btn hour" id="btn">22</button>
-      <button type="button" name="hour23" onclick="needsByHours(23)" class="btn hour" id="btn">23</button>
-    </section> -->
   </div>
   <div class="col-md-4"></div>
   <div class="col-md-12" style="height:20px"></div>
@@ -390,10 +361,19 @@
 
 <!-- Footer -->
 <footer class="footer">
-  <!-- Copyright -->
-  <div class="footer-copyright">© 2018 Copyright:
-    <a href="#"> www.ttu.com</a>
-  </div>
+  <!-- <div class="navbar-header my-header">
+    <table style="width: 85%">
+      <tr>
+        <td> -->
+            <!-- Copyright -->
+
+          <div class="footer-copyright">© 2018 Copyright:
+            <a href="http://myweb.ttu.edu/fjin/">TTU Data Discovery Lab</a>
+          </div>
+        <!-- </td>
+      </tr>
+    </table> -->
+      </div>
   <!-- Copyright -->
 </footer>
 <!-- Footer -->
