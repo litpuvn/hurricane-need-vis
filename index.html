@@ -5,7 +5,6 @@
   <title>Hurricane Needs</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="main/main.css" type="text/css" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
   <script src="lib/jquery.min.js"></script>
   <script src="lib/bootstrap.min.js"></script>
@@ -59,6 +58,10 @@
     alert($(this.a).text());
     })
   </script> -->
+
+
+  <link rel="stylesheet" href="main/main.css" type="text/css" />
+
 </head>
 
 <body>
@@ -67,6 +70,7 @@
 	<div class="navbar-header my-header">
     <table style="width: 85%">
       <tr>
+          <td style="width: 100px"></td>
         <td>
           <div>
         		<ul class="nav navbar-nav" style="display:inline;">
@@ -75,7 +79,7 @@
         					Date
         					<b class="caret"></b>
         				</a>
-        				<ul id="day" class="dropdown-menu">
+        				<ul id="day" class="dropdown-menu my_dropdown">
                   <li id="li0823" class="day"><a href="#">2017-8-23</a></li>
                   <li id="li0824" class="day"><a href="#">2017-8-24</a></li>
                   <li id="li0825" class="day"><a href="#">2017-8-25</a></li>
@@ -90,9 +94,6 @@
         			</li>
         		</ul>
         	</div>
-
-        </td>
-        <td style="width: 20px;">
 
         </td>
         <td>

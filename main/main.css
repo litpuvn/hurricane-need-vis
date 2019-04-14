@@ -9,6 +9,14 @@ body {
   background-color: #ffbbbc;
 }
 
+.my_dropdown {
+  min-width: 105px; !important;
+}
+
+.my_dropdown li a:hover {
+  background-color: #fc9272; !important;
+}
+
 .my-header{
     width:100%;
     height: 20px;
