@@ -9,8 +9,28 @@ body {
   background-color: #ffbbbc;
 }
 
+.my-header{
+    width:100%;
+    height: 20px;
+    text-align: center;
+    font-size: 18px;
+    color: #FFFFFF;
+    /* float: left; */
+    display: inline;
+    clear:both;
+}
+
+.nav .navbar-nav{
+
+}
 .navbar {
   background-color: #e74c3c !important;
+}
+
+.navbar-header{
+  /* clear:both;
+  float: none !important;
+  text-align:center; */
 }
 
 .navbar .navbar-brand {
@@ -27,11 +47,14 @@ body {
 }
 
 .footer {
-  height: 50px;
+  width: 100%;
+  height: auto;
   background-color: #e74c3c;
 }
 
 .footer-copyright {
+  padding-top: 10px;
+  height:50px;
   font-size: 15pt;
   text-align: center;
   color: #ecf0f1 !important;
@@ -57,17 +80,6 @@ body {
   min-height: 600px;
   position: relative;
 }
-/*
-svg {
-  position: relative;
-  display: block;
-  margin: auto;
-}
-
-svg g {
-  opacity: 0.9;
-} */
-
 
 .centered img {
   width: 150px;
@@ -81,6 +93,11 @@ svg g {
 }
 
 #ids {
+  font-family: Impact;
+  font-size: 30px;
+}
+
+#map_title{
   font-family: Impact;
   font-size: 30px;
 }
@@ -143,10 +160,6 @@ svg g {
 .tooltip.top .tooltip-arrow {
    border-top-color: #f44336 !important;
 
-}
- .slider .tooltip.bs-tether-element-attached-top.tooltip-inner::before{
-  border-bottom-color:red!important;
-  background: #cb181d !important;
 }
 
 .concern_flow{

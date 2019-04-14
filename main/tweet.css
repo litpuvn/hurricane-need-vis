@@ -1,5 +1,5 @@
 .tweet{
-  max-height: 530px;
+  max-height: 600px;
   overflow-y: scroll;
   transition-duration: 0.5s;
 }
