@@ -55,27 +55,14 @@
   <link rel="stylesheet" type="text/css" href="main/tweet.css">
   <link rel="stylesheet" href="main/main.css" type="text/css" />
   <style>
-  .selected{
-    color:blue;
-  }
+
 	</style>
   <script>
-    // function changeColor(ids){
-    //   console.log("a");
-    //   id = '#'+ids
-    //   console.log(ids, id);
-    //    let text = document.getElementById();
-    //    console.log(text);
-    //    // $(this).addClass("selected").siblings().removeClass("selected");
-    //   // return day;
-    // }
-    // $(function(){
-    //   $("ul > li > a").click(function(){
-    //     console.log('li');
-    //     console.log($(this).text());
-    //      $(this).addClass("selected").siblings().removeClass("selected");
-    //   });
-    // });
+  $(function(){
+    $("li").click(function(){
+    $(this).addClass("selected").siblings().removeClass("selected");
+    });
+  });
   </script>
 </head>
 
@@ -83,7 +70,7 @@
   <nav class="navbar navbar-default" role="navigation">
 	<div class="container-fluid">
 	<div class="navbar-header my-header">
-    <table style="width: 85%">
+    <table style="width: 85%; height:auto;">
       <tr>
           <td style="width: 100px"></td>
         <td>
@@ -99,7 +86,7 @@
                   <li onclick="needsByDay('0824')"><a>2017-8-24</a></li>
                   <li onclick="needsByDay('0825')"><a>2017-8-25</a></li>
                   <li onclick="needsByDay('0826')"><a>2017-8-26</a></li>
-                  <li onclick="needsByDay('0827')"><a>2017-8-27</a></li>
+                  <li onclick="needsByDay('0827')" class="selected"><a>2017-8-27</a></li>
                   <li onclick="needsByDay('0828')"><a>2017-8-28</a></li>
                   <li onclick="needsByDay('0829')"><a>2017-8-29</a></li>
                   <li onclick="needsByDay('0830')"><a>2017-8-30</a></li>
@@ -109,7 +96,6 @@
         			</li>
         		</ul>
         	</div>
-
         </td>
         <td>
            NiPred: NEED PREDICTOR FOR HURRICANE DISASTER RELIEF
@@ -340,7 +326,6 @@
      <div class="row">
         <div class="col-md-8">
           <div class="concern_region_name">
-              <!-- <text>Region: </text> -->
           </div>
           <div class="concern_flow"></div>
         </div>
