@@ -10,11 +10,11 @@ body {
 }
 
 .my_dropdown {
-  min-width: 105px; !important;
+  min-width: 105px !important;
 }
 
 .my_dropdown li a:hover {
-  background-color: #fc9272; !important;
+  background-color: #fc9272 !important;
 }
 
 .my-header{
